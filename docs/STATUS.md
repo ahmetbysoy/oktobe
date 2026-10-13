@@ -37,4 +37,4 @@ Toplam 14 görev: `VERIFIED` 3 (TASK-001, TASK-002, TASK-003) · `IMPLEMENTED` 1
 
 ## Kullanıcıdan beklenen kararlar
 
-Q-01 referans dosya · Q-02 ikinci ajanın başlatılma biçimi · Q-03 hedef ağ/cihaz · Q-04 deploy hedefi · Q-08 D-004 baton yorumu onayı. Ayrıntı: `docs/OPEN_QUESTIONS.md`.
+Q-03 hedef ağ/cihaz · Q-04 deploy hedefi · Q-08 D-004 baton yorumu onayı. Repo görünürlüğü kararı verildi: **public kalacak** (D-009). Ayrıntı: `docs/OPEN_QUESTIONS.md`, `docs/DECISIONS.md`.
