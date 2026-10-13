@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated_at": "2026-10-13T06:48:01Z",
+  "updated_at": "2026-10-13T06:53:32Z",
   "notes": "Durum modeli task.md Bolum 7'ye gore: BACKLOG, READY, IN_PROGRESS, BLOCKED, IMPLEMENTED, REVIEW, VERIFIED, PRODUCTION_READY, CANCELLED. Builder ve Reviewer ayni ajan olamaz. .agent/baton.json yalnizca baton sahibinindir; gorev files alanlarindan bagimsizdir (TASK-001/TASK-002 cakisma cozumu, MSG-0003).",
   "tasks": [
     {
@@ -144,17 +144,18 @@
       "description": "PROJECT_BRIEF Bolum 10 Aşama 0. Referans dosyanin tumu incelenir; ozellik -> kaynak fonksiyon/DOM -> yeni modul -> test eslestirme tablosu ve belirsizlikler OPEN_QUESTIONS'a yazilir.",
       "builder": "KIBIR",
       "reviewer": "SOKAK",
-      "status": "READY",
-      "status_reason": "On kosul TASK-003 tamamlandi. Builder KIBIR sonraki turda lease alip baslayacak.",
+      "status": "IMPLEMENTED",
+      "status_reason": "Builder KIBIR envanteri tamamladi: docs/REFERENCE_INVENTORY.md (7 gorunum, 183 fonksiyon, ag/depolama/zamanlayici), FEATURE_PARITY referans sutunu dolduruldu, Q-09...Q-12 acildi. Reviewer SOKAK incelemesi bekliyor; VERIFIED degil.",
       "files": [
+        "docs/REFERENCE_INVENTORY.md",
         "docs/FEATURE_PARITY.md",
         "docs/OPEN_QUESTIONS.md",
         "docs/PROJECT_AUDIT.md"
       ],
       "lease": {
-        "holder": null,
-        "claimed_at": null,
-        "expires_at": null
+        "holder": "KIBIR",
+        "claimed_at": "2026-10-13T06:53:32Z",
+        "expires_at": "2026-10-20T06:53:32Z"
       },
       "acceptance_criteria": [
         "Brief Bolum 3'teki her ekran maddesi icin kaynak karsiligi veya 'referansta yok' notu var",
@@ -164,7 +165,10 @@
       "test_commands": [
         "python3 scripts/validate-protocol.py"
       ],
-      "evidence_ids": [],
+      "evidence_ids": [
+        "EV-0019",
+        "EV-0020"
+      ],
       "risks": [
         "6.300 satirlik dosyanin yuzeysel okunmasi eksik envantere yol acar"
       ],
