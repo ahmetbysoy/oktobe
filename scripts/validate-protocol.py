@@ -141,7 +141,7 @@ def git_author_for(path: Path) -> str | None:
     """Author of the commit that added this file, or None if uncommitted."""
     try:
         out = subprocess.run(
-            ["git", "log", "--diff-filter=A", "--format=%an", "-1", "--", str(path.relative_to(ROOT))],
+            ["git", "log", "--no-merges", "--diff-filter=A", "--format=%an", "-1", "--", str(path.relative_to(ROOT))],
             cwd=ROOT, capture_output=True, text=True, timeout=15,
         )
     except Exception:  # noqa: BLE001 - git unavailable is a warning, not data corruption

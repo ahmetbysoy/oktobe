@@ -16,6 +16,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Tam gecmis gerekli: dogrulayici, talk dosyalarini ekleyen gercek
+          # commit yazarini git log ile bulur. Sig (depth=1) PR merge
+          # checkout'inda merge commit'i yanlis yazarmis gibi gorunur.
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
