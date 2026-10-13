@@ -11,7 +11,7 @@
 | Repo okuma (dosya, git geçmişi) | PASS | `git ls-files`, `git log` koşuldu; 3 dosya, 3 commit envanteri çıkarıldı | EV-0001 |
 | Repo yazma (yerel çalışma alanı) | PASS | Bu turdaki tüm dosyalar yazıldı; `git status` ile izlendi | EV-0008 |
 | Git branch açma / yerel commit | PASS | `docs/000-kickoff-kurulum-turu` branch'i açıldı; kimlik `Agent KIBIR <kibir@agent.local>` ayarlandı | EV-0009 |
-| Git push (GitHub) | NOT_RUN → bu belgenin yazıldığı anda denenmemişti; tur sonunda denenecek ve sonucu `attempts.jsonl` + STATUS'a işlenecek | Push çıktısı kanıt sayılır; başarı iddia edilmiyor | — (tur sonu güncellenir) |
+| Git push (GitHub) | FAIL | Tur sonunda denendi: `could not read Username` (exit 128), kimlik bilgisi yok. Kimlik bilgisi repoya/sohbete yazılmaz; yedek teslim `git bundle` ile yapılır | EV-0010, AT-0004 |
 | GitHub Issue / PR açma | NOT_RUN | `gh` CLI ortamda yok (`command not found`); token da yok. Issue/PR açıldığı iddia edilemez | EV-0002 |
 | GitHub Actions çalıştırma | NOT_RUN | Push + `gh` olmadan tetiklenemez/doğrulanamaz. Workflow dosyası yazıldı ama "CI çalışıyor" denmez | EV-0002 |
 | Terminal / kabuk | PASS | bash komutları koşuldu (git, curl, python, node sürüm kontrolleri) | EV-0001, EV-0002 |

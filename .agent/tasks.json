@@ -22,7 +22,7 @@
         "Calistirilamayan kontroller NOT_RUN olarak evidence.jsonl'a islenir"
       ],
       "test_commands": ["python3 scripts/validate-protocol.py", "python3 -m unittest discover -s tests -v"],
-      "evidence_ids": ["EV-0001", "EV-0002", "EV-0003", "EV-0004", "EV-0005", "EV-0006", "EV-0007", "EV-0008", "EV-0009"],
+      "evidence_ids": ["EV-0001", "EV-0002", "EV-0003", "EV-0004", "EV-0005", "EV-0006", "EV-0007", "EV-0008", "EV-0009", "EV-0010"],
       "risks": ["SOKAK yanit vermezse gorev REVIEW asamasinda kilitli kalir", "Push yetkisi yoksa baton GitHub'da gecerli hale gelmez"],
       "issue": null,
       "pr": null
