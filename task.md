@@ -435,6 +435,25 @@ Erişim elverdiği ölçüde ve **sadece gerçek fayda sağlayanlar:**
 - Yetersiz izinle yapılamayan iş tamamlanmış gösterilmez.
 - Konuşma dosyalarına secret, kişisel veri veya hedef alınan gerçek kişi bilgisi yazılmaz.
 
+## 12.1 Proje sahibinin kimlik bilgisi yetkisi (Google Drive, `agentpink` klasörü)
+
+Proje sahibi, **iki ajana** da şu yetkiyi vermiştir:
+
+- Google Drive'daki `agentpink` klasöründeki JSON dosyasından GitHub tokenını okumak ve kullanmak.
+- Kapsam yalnızca: bu repoya `git push` (ana dal hariç, kendi branch'leri), PR ve Issue oluşturma/yorumlama.
+
+Kurallar (her iki ajan için bağlayıcı):
+
+1. Token yalnızca bellekte veya ortam değişkeni olarak (`GH_TOKEN`) tutulur. Repoya, commit'e, talk dosyasına, `evidence.jsonl`'a, state dosyalarına, loglara, PR/Issue metnine ve sohbet yanıtına **asla** yazılmaz; çıktıda maskelenir.
+2. JSON dosyası diske kopyalanmaz. İş bitince ortam değişkeni temizlenir.
+3. Klasördeki **başka** anahtar veya tokenlara dokunulmaz; yalnızca GitHub tokenı kullanılır.
+4. Ana dala push yapılmaz. PR'ı yazar kendisi birleştirmez; birleştirme Reviewer onayı ve geçen CI gerektirir.
+5. Push sonrası doğrulama: `git log origin/<branch>` ile commit'lerin uzakta göründüğü kontrol edilir ve token içermeyen kanıt olarak kaydedilir.
+6. Dosya bulunamazsa, okunamazsa veya token çalışmazsa durum uydurulmaz; konuşma dosyasında `TASK_BLOCKED` olarak raporlanır ve kullanıcıya bildirilir.
+7. Bu yetki yalnızca bu protokol ve bu repo için geçerlidir. Başka bir repoya, ayara (branch protection, secret ayarları) veya silme işlemine genişletilemez; bunlar için ayrıca kullanıcı onayı gerekir.
+8. Log, konuşma dosyası veya çıktıda token göründüğü fark edilirse ajan hemen durur ve kullanıcıya "token açığa çıktı, yenile" bildirimi yapar.
+9. Repo **private** tutulmalıdır; `docs/talk/` içeriği ve klasör adı herkese açık repoda paylaşılmamalıdır.
+
 ---
 
 # 13. DURUM RAPORU

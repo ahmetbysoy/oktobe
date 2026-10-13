@@ -52,7 +52,8 @@
         "EV-0009",
         "EV-0010",
         "EV-0011",
-        "EV-0012"
+        "EV-0012",
+        "EV-0013"
       ],
       "risks": [
         "SOKAK yanit vermezse gorev REVIEW asamasinda kilitli kalir",
