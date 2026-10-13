@@ -1,0 +1,25 @@
+name: Hata bildirimi
+description: Çalışan davranıştaki bir hatayı bildir
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: Ne oldu / ne bekleniyordu?
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Yeniden üretme adımları
+      description: Komutlar, sembol/zaman dilimi, bağlantı durumu (REST/WS) ve veri yaşı bilgisini ekle.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Kanıt
+      description: Konsol çıktısı, log, evidence_id veya ekran görüntüsü referansı. Tahmin değil gözlem yaz.
+    validations:
+      required: true

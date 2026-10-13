@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "project": "oktobe - Futures Scanner / Order-Flow Terminal",
+  "owner_repository": "https://github.com/ahmetbysoy/oktobe",
+  "objective": "PROJECT_BRIEF.md ve referans uygulama (index (30).html) esas alinarak Binance USD-M Futures piyasa verisini kullanan, mobil oncelikli Futures Scanner ve Order-Flow Terminal'i sifirdan, moduler, test edilebilir ve surdurulebilir sekilde yeniden gelistirmek; her ozelligi test ve taze kanitla dogrulamak.",
+  "success_criteria": [
+    "Referans uygulamanin ekran/fonksiyon/state/network/storage envanteri cikarilmis ve FEATURE_PARITY matrisiyle eslestirilmis olmasi",
+    "Her gorunur kontrolun gercek davranisa bagli olmasi; mock/sahte piyasa verisinin canli veri gibi sunulmamasi",
+    "Teknik gostergeler ve raw-flow metriklerinin UI'dan bagimsiz, deterministik test vektörleriyle dogrulanmasi",
+    "REST/WebSocket baglanti sagligi, veri yasi ve hata durumlarinin (451/403/429/5xx, WS close) kullanicidan gizlenmemesi",
+    "Build, lint, typecheck ve testlerin CI'da gercekten calismasi",
+    "VERIFIED / PRODUCTION_READY isaretli her gorev icin evidence.jsonl icinde taze kanit bulunmasi"
+  ],
+  "non_goals": [
+    "Emir gonderimi, gercek para islemi veya Binance hesap API anahtari kullanimi",
+    "Bölgesel kisitlama (HTTP 451) veya CORS engelini yasa disi / belgelenmemis yollarla asma girisimi",
+    "Backtest sonuclarini karlilik garantisi veya yatirim tavsiyesi olarak sunma"
+  ],
+  "constraints": [
+    "task.md (Iki Ajanli Otonom Muhendislik Takimi protokolu) surec otoritesidir",
+    "Referans dosya index (30).html repoda mevcut degil; parity denetimi bu dosya saglanmadan baslatilamaz",
+    "Karşı ajan (SOKAK) bagimsiz kimlikle dogrulanmadan hicbir gorev VERIFIED olamaz"
+  ],
+  "updated_at": "2026-10-13T04:03:51Z"
+}

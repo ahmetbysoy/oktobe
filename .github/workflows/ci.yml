@@ -1,0 +1,29 @@
+name: CI
+
+# Mevcut kapsam: takim protokolu dogrulamasi (scripts/validate-protocol.py).
+# Uygulama isleri (install/lint/typecheck/test/build), yigin TASK-006/TASK-007 ile
+# kilitlenip gercek komutlar var oldugunda bu dosyaya eklenecektir.
+# Bu workflow henuz GitHub'da calistirilmadi; "CI geciyor" iddiasi kanit gerektirir.
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  protocol:
+    name: Protocol validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Validate protocol state
+        run: python3 scripts/validate-protocol.py
+
+      - name: Run validator unit tests
+        run: python3 -m unittest discover -s tests -v

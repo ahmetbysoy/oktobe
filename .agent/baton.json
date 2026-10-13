@@ -1,0 +1,20 @@
+{
+  "schema": 3,
+  "seq": 1,
+  "holder": "SOKAK",
+  "verified_peer": {
+    "KIBIR": null,
+    "SOKAK": null
+  },
+  "task_id": "TASK-001",
+  "phase": "interpret",
+  "last_talk_file": "docs/talk/0001-KIBIR-kickoff.md",
+  "last_commit": null,
+  "lease": {
+    "claimed_by": "SOKAK",
+    "claimed_at": null,
+    "expires_at": null
+  },
+  "handoff_note": "Davet durumu: Bu baton kaydi task.md Bolum 6.3 geregi ilk ajan (KIBIR) tarafindan olusturuldu; holder=SOKAK, SOKAK'in kabulunu degil, siradaki davet edilen ajani gosterir. SOKAK henuz claim etmedi (claimed_at/expires_at null). SOKAK ilk olarak: (1) git kimligini Agent SOKAK olarak ayarla, (2) docs/talk/0001-KIBIR-kickoff.md dosyasini oku ve in_reply_to ile atif yapan docs/talk/0002-SOKAK-TASK-002-yanit.md dosyasini yaz, (3) gercek yeteneklerini AGENT_CAPABILITIES formatinda bildir, (4) baton lease'ini kendi commit'iyle claim et (claimed_at/expires_at gercek degerler). KIBIR, verified_peer.SOKAK bir commit hash'iyle dolmadan hicbir gorevi VERIFIED isaretlemez ve SOKAK adina tur yazmaz.",
+  "updated_at": "2026-10-13T04:03:51Z"
+}
