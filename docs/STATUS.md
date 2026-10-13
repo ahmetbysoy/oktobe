@@ -7,14 +7,14 @@
 
 | Öğe | Değer |
 |---|---|
-| Baton | `seq 3`, holder: KIBIR, `verified_peer`: KIBIR `457f831`, SOKAK `81dcfc7` (iki yönlü doğrulandı) |
-| Son konuşma dosyası | `docs/talk/0003-KIBIR-TASK-002-devralma.md` |
-| Aktif lease | Baton lease: KIBIR, 2026-10-13T06:48:01Z → 2026-10-20T06:48:01Z. Görev lease'i aktif yok (`TASK-004` başlangıcında alınacak) |
-| İnceleme bekleyen | 0003 turu PR'ı (yazar KIBIR; Reviewer SOKAK). PR #1 ve PR #2 merge edildi |
+| Baton | `seq 3`, holder: KIBIR, `verified_peer`: iki yönlü dolu. Sıradaki talk (0004) SOKAK'ın; KIBIR üst üste tur yazmaz |
+| Son konuşma dosyası | `docs/talk/0003-KIBIR-TASK-002-devralma.md` (TASK-004 teslimi PR ile; talk sırası SOKAK'ta) |
+| Aktif lease | `TASK-004` → KIBIR, 2026-10-13T06:53:32Z → 2026-10-20T06:53:32Z (envanter teslim edildi, inceleme bekliyor) |
+| İnceleme bekleyen | TASK-004 turu PR'ı (yazar KIBIR; Reviewer SOKAK). PR #1, #2, #3 merge edildi (son: `f5b56e1`) |
 
 ## Görev durumu (sayılar, uydurma yüzde yok)
 
-Toplam 14 görev: `VERIFIED` 3 (TASK-001, TASK-002, TASK-003) · `READY` 1 (TASK-004) · `BACKLOG` 10 · `PRODUCTION_READY` 0. İlerleme oranı verilmez; oran ancak görev ağırlıkları tanımlandığında, yöntemi yazılarak verilir.
+Toplam 14 görev: `VERIFIED` 3 (TASK-001, TASK-002, TASK-003) · `IMPLEMENTED` 1 (TASK-004, inceleme bekliyor) · `BACKLOG` 10 · `PRODUCTION_READY` 0. İlerleme oranı verilmez; oran ancak görev ağırlıkları tanımlandığında, yöntemi yazılarak verilir.
 
 ## Bu turda doğrulananlar (taze kanıtlı)
 
@@ -31,10 +31,10 @@ Toplam 14 görev: `VERIFIED` 3 (TASK-001, TASK-002, TASK-003) · `READY` 1 (TASK
 
 ## Sonraki üç iş (öncelik sırasıyla)
 
-1. Proje sahibi: referans `index (30).html` dosyasını repoya ekler (TASK-003) ve SOKAK'ın nasıl başlatılacağını bildirir (Q-01, Q-02).
-2. SOKAK: `TASK-002` — kendi kimliğiyle 0002 yanıtı + yetenek raporu; baton claim.
-3. KIBIR (devralma turu): SOKAK commit'ini doğrulayıp `verified_peer.SOKAK` doldurur, `TASK-001` incelemesini sonuca bağlar; ardından `TASK-004/TASK-006` sıralanır.
+1. SOKAK: TASK-004 PR incelemesi (tek PASS/FAIL) ve baton claim.
+2. SOKAK (Builder): `TASK-006` mimari karar taslağını push eder (`docs/006-mimari-karar` GitHub'da henüz yok).
+3. KIBIR: TASK-006 incelemesi; karar kilitlenirse `TASK-007` iskeleyi açar.
 
 ## Kullanıcıdan beklenen kararlar
 
-Q-01 referans dosya · Q-02 ikinci ajanın başlatılma biçimi · Q-03 hedef ağ/cihaz · Q-04 deploy hedefi · Q-08 D-004 baton yorumu onayı. Ayrıntı: `docs/OPEN_QUESTIONS.md`.
+Q-03 hedef ağ/cihaz · Q-04 deploy hedefi · Q-08 D-004 baton yorumu onayı. Repo görünürlüğü kararı verildi: **public kalacak** (D-009). Ayrıntı: `docs/OPEN_QUESTIONS.md`, `docs/DECISIONS.md`.

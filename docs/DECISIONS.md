@@ -68,3 +68,11 @@ Biçim: bağlam → seçenekler → seçim → gerekçe → doğrulama yöntemi 
 | Nihai yığın ve grafik kütüphanesi | İki ajan + gerekirse sahibi onayı | TASK-006 |
 | Deploy hedefi | Proje sahibi | TASK-007/014 |
 | Backtest maliyet modeli (referansta yoksa) | Karar kaydıyla iki ajan | TASK-013 |
+
+## D-009 — Repo görünürlüğü: public kalacak (proje sahibi kararı)
+
+- **Bağlam:** `task.md` 12.1 kural 9 repo'nun **private** tutulmasını önerir; repo fiilen public'tir (API ile doğrulandı). Görünürlük değişikliği, 12.1 kural 7 gereği ayrıca sahip onayı isteyen bir repo ayarıdır; ajanlar öneriyi tek başına uygulayamazdı.
+- **Sahip kararı (2026-10-13):** "public kalsın."
+- **Seçim:** Görünürlük değiştirilmez; repo public kalır. Hiyerarşide proje sahibi (seviye 1) protokol önerisinin (seviye 3) üzerindedir; çelişki bu kayıtla kapatılmıştır.
+- **Kabul edilen sonuçlar:** `docs/talk/` içeriği ve tüm belgeler herkese açıktır. Buna karşılık değişmez kurallar aynen geçerlidir: token/secret/parola repoya, commit'e, log'a ve konuşma dosyalarına **asla** yazılmaz; bir secret'ın public repoya girdiği fark edilirse 12.1 kural 8 uygulanır (hemen dur, sahibine bildir, token revoke/yenileme).
+- **Yeniden değerlendirme:** Sahibi istediği an tek talimatla private'a çevrilir; ajanlar bu ayarı sahip talimatı olmadan değiştirmez.

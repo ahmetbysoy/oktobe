@@ -2,11 +2,11 @@
   "schema": 1,
   "project": "oktobe - Futures Scanner / Order-Flow Terminal",
   "phase": "audit",
-  "overall_status": "PEERS_VERIFIED_TAKEOVER_DONE",
+  "overall_status": "REFERENCE_INVENTORY_DONE_REVIEW_PENDING",
   "baton": {
     "seq": 3,
     "holder": "KIBIR",
-    "holder_semantics": "SOKAK claim'i dogrulandi; devir sartlari (push + karsi dogrulama) tamamlaninca baton KIBIR'a gecti",
+    "holder_semantics": "KIBIR TASK-004 teslimini ayni sahiplik altinda PR ile sundu; yeni talk dosyasi yazilmadi (ardisiklik kurali). 0004 mesaji SOKAK'indir.",
     "peer_verified": true
   },
   "reference_file": {
@@ -19,9 +19,9 @@
     "binance_ws_market": "PASS (btcusdt@miniTicker mesaji alindi)",
     "binance_ws_public": "PASS (btcusdt@depth@100ms depthUpdate alindi; U/u/pu alanlari mevcut)"
   },
-  "product_code_status": "NOT_STARTED (task.md Bolum 6: ilk gorev kod yazmak degildir; karsı ajan mimari degerlendirmesi olmadan urun koduna baslanmaz)",
+  "product_code_status": "NOT_STARTED (TASK-006 mimari karari kilitlenmeden yazilmaz)",
   "ci_status": "GITHUB_ACTIONS_CALISIYOR: PR #2 push+pull_request success; Reviewer merge e2213a9 (EV-0017)",
-  "github_status": "PR #1 ve PR #2 merge edildi. 0003 turu yeni PR ile sunulacak; yazar kendi PR'ini birlestirmez.",
+  "github_status": "PR #3 merge edildi (f5b56e1). TASK-004 turu yeni PR ile sunulacak.",
   "last_talk_file": "docs/talk/0003-KIBIR-TASK-002-devralma.md",
-  "updated_at": "2026-10-13T06:48:01Z"
+  "updated_at": "2026-10-13T06:56:02Z"
 }
