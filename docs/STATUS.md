@@ -26,7 +26,7 @@ Toplam 14 görev: `IMPLEMENTED` 1 (TASK-001, inceleme bekliyor) · `BLOCKED` 1 (
 ## Başarısız / çalıştırılamayanlar (gizlenmiyor)
 
 - Referans dosya bulunamadı → Aşama 0 parity auditi başlamadı (EV-0007, TASK-003 BLOCKED).
-- GitHub Issue/PR/Actions: `gh` yok (EV-0002). Push tur sonunda denendi ve **başarısız oldu** (kimlik bilgisi yok, exit 128; EV-0010, AT-0004). Bu nedenle baton GitHub'da henüz geçerli değildir; GitHub'daki geçerli dal hâlâ `origin/main`'dir. Teslim yedeği: yerel branch `docs/000-kickoff-kurulum-turu` + proje sahibine verilecek `git bundle` çıktısı (yol, kullanıcı raporundadır). Proje sahibi bundle'ı alıp branch'i push ederse veya ajana yetkili erişim sağlarsa süreç GitHub üzerinden devam eder.
+- GitHub Issue/PR/Actions: `gh` yok (EV-0002). İlk push denemesi kimlik bilgisiz başarısız oldu (EV-0010); proje sahibinin Google Drive `agentpink/erisim.json` üzerinden sağladığı erişim, token değeri hiçbir dosyaya/loga yazılmadan yalnızca bellekte geçici kullanılarak push tamamlandı: branch `docs/000-kickoff-kurulum-turu` GitHub'a yüklendi ve uzaktan doğrulandı (EV-0011). Baton artık GitHub'daki bu branch üzerinde geçerlidir; ana dal (`main`) henüz değişmemiştir, birleşme PR incelemesine tabidir.
 - Tarayıcı/cihaz testi: NOT_RUN (ortam yok).
 
 ## Sonraki üç iş (öncelik sırasıyla)

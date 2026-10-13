@@ -21,7 +21,7 @@
   },
   "product_code_status": "NOT_STARTED (task.md Bolum 6: ilk gorev kod yazmak degildir; karsı ajan mimari degerlendirmesi olmadan urun koduna baslanmaz)",
   "ci_status": "WORKFLOW_YAZILDI_GITHUBDA_CALISTIRILMADI (gh CLI yok; push yetkisi dogrulanamadi)",
-  "github_status": "ISSUE_PR_ACILMADI (gh CLI yok, token yok; uydurma referans yazilmadi). Push denendi ve basarisiz oldu (EV-0010, AT-0004); GitHub'da gecerli dal origin/main, baton henuz GitHub'da yok. Teslim: yerel branch + git bundle.",
+  "github_status": "PUSH_TAMAMLANDI: docs/000-kickoff-kurulum-turu branch'i GitHub'da ve uzaktan dogrulandi (EV-0011). Erisim, proje sahibinin Drive erisim dosyasindan yalnizca bellekte gecici kullanildi; token degeri repoya/loga/kanita yazilmadi. Issue/PR durumu kullanici raporunda.",
   "last_talk_file": "docs/talk/0001-KIBIR-kickoff.md",
   "updated_at": "2026-10-13T04:03:51Z"
 }
