@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "updated_at": "2026-10-13T04:03:51Z",
-  "notes": "Durum modeli task.md Bolum 7'ye gore: BACKLOG, READY, IN_PROGRESS, BLOCKED, IMPLEMENTED, REVIEW, VERIFIED, PRODUCTION_READY, CANCELLED. Builder ve Reviewer ayni ajan olamaz. Lease alan gorev baseline'dir; dosyalar baska aktif lease ile kesistirirmez.",
+  "updated_at": "2026-10-13T06:48:01Z",
+  "notes": "Durum modeli task.md Bolum 7'ye gore: BACKLOG, READY, IN_PROGRESS, BLOCKED, IMPLEMENTED, REVIEW, VERIFIED, PRODUCTION_READY, CANCELLED. Builder ve Reviewer ayni ajan olamaz. .agent/baton.json yalnizca baton sahibinindir; gorev files alanlarindan bagimsizdir (TASK-001/TASK-002 cakisma cozumu, MSG-0003).",
   "tasks": [
     {
       "id": "TASK-001",
@@ -9,8 +9,8 @@
       "description": "task.md Bolum 6 kurulum turu. Urun kodu yazilmaz. Repo gercekten incelenir, yetenekler dogrulanir, takim belgeleri gercek icerikle kurulur, kickoff konusmasi yazilir.",
       "builder": "KIBIR",
       "reviewer": "SOKAK",
-      "status": "IMPLEMENTED",
-      "status_reason": "Builder isi tamamladi; Reviewer (SOKAK) henuz dogrulanmadigi icin VERIFIED degildir ve olamaz (task.md 4.4).",
+      "status": "VERIFIED",
+      "status_reason": "Reviewer SOKAK PASS (duzeltme gerekli) karari verdi (MSG-0002); duzeltmeler 0003 turunda kapatildi: bayat referans durumu guncellendi, .agent/** lease cakismasi lease serbest birakilip baton sahipligi ayristirilarak cozuldu. KIBIR taze dogrulamasi: EV-0014...EV-0018.",
       "files": [
         ".agent/**",
         "docs/**",
@@ -24,9 +24,9 @@
         ".gitignore"
       ],
       "lease": {
-        "holder": "KIBIR",
+        "holder": null,
         "claimed_at": "2026-10-13T04:03:51Z",
-        "expires_at": "2026-10-20T04:03:51Z"
+        "expires_at": null
       },
       "acceptance_criteria": [
         "docs/PROJECT_AUDIT.md gercek komut ciktilarina dayali mevcut durumu anlatir",
@@ -53,7 +53,12 @@
         "EV-0010",
         "EV-0011",
         "EV-0012",
-        "EV-0013"
+        "EV-0013",
+        "EV-0014",
+        "EV-0015",
+        "EV-0016",
+        "EV-0017",
+        "EV-0018"
       ],
       "risks": [
         "SOKAK yanit vermezse gorev REVIEW asamasinda kilitli kalir",
@@ -68,8 +73,8 @@
       "description": "SOKAK kendi git kimligiyle (Agent SOKAK <sokak@agent.local>) 0002 numarali konusma dosyasını yazar; gercek araclarini, erisimlerini, test yeteneklerini, GitHub imkanini ve ilk uc riskini bildirir; baton lease'ini kendi commit'iyle claim eder.",
       "builder": "SOKAK",
       "reviewer": "KIBIR",
-      "status": "BACKLOG",
-      "status_reason": "KIBIR kickoff'unu bekliyor; SOKAK adina yazi yazilamaz (task.md 4.4).",
+      "status": "VERIFIED",
+      "status_reason": "Builder SOKAK teslimi KIBIR tarafindan bagimsiz dogrulandi: commit yazari Agent SOKAK, from eslesmesi, sekiz yanit tam, validator/unittest Reviewer kosusunda PASS, PR #2 CI success ve Reviewer merge (e2213a9). Bulgular (MEDIUM evidence kaydi eksigi, LOW tip alani ve bayat push beyanı) MSG-0003'te kapatildi/supersede edildi.",
       "files": [
         "docs/talk/0002-SOKAK-TASK-002-yanit.md",
         ".agent/baton.json"
@@ -87,12 +92,16 @@
       "test_commands": [
         "python3 scripts/validate-protocol.py"
       ],
-      "evidence_ids": [],
+      "evidence_ids": [
+        "EV-0014",
+        "EV-0016",
+        "EV-0017"
+      ],
       "risks": [
         "Proje sahibi ikinci ajani ayri oturumda baslatmazsa bu gorev hic baslayamaz"
       ],
       "issue": null,
-      "pr": null
+      "pr": "https://github.com/ahmetbysoy/oktobe/pull/2"
     },
     {
       "id": "TASK-003",
@@ -100,8 +109,8 @@
       "description": "Proje sahibi referans HTML dosyasini repoya ekler veya ajan erisebilecegi bir konuma birakir. Alan ajan dosyayi tasimaz/kopyalamis gibi yapmaz; boyut ve SHA-256 ozeti kaydeder, dosya envantere girer.",
       "builder": "SOKAK",
       "reviewer": "KIBIR",
-      "status": "BLOCKED",
-      "status_reason": "Dosya repoda yok (EV-0007). Engel sahibi: proje sahibi. Denenen adim: repo, git gecmisi ve calisma alani tarandi, bulunamadi.",
+      "status": "VERIFIED",
+      "status_reason": "Referans dosya proje sahibi tarafindan ana dala yuklendi (39d098b); KIBIR dogruladi: 6370 satir, 303780 bayt, SHA-256 EV-0015'te ve PROJECT_AUDIT Bolum 2'de kayitli. Dosya icerigine dokunulmadi.",
       "files": [
         "index (30).html"
       ],
@@ -120,7 +129,8 @@
         "wc -l \"index (30).html\""
       ],
       "evidence_ids": [
-        "EV-0007"
+        "EV-0007",
+        "EV-0015"
       ],
       "risks": [
         "Dosya hic saglanmazsa FEATURE_PARITY ve Aşama 0 auditi tamamlanamaz; brief kapsamı ekran envanteriyle sinirli kalir"
@@ -134,8 +144,8 @@
       "description": "PROJECT_BRIEF Bolum 10 Aşama 0. Referans dosyanin tumu incelenir; ozellik -> kaynak fonksiyon/DOM -> yeni modul -> test eslestirme tablosu ve belirsizlikler OPEN_QUESTIONS'a yazilir.",
       "builder": "KIBIR",
       "reviewer": "SOKAK",
-      "status": "BACKLOG",
-      "status_reason": "TASK-003'e bagimli.",
+      "status": "READY",
+      "status_reason": "On kosul TASK-003 tamamlandi. Builder KIBIR sonraki turda lease alip baslayacak.",
       "files": [
         "docs/FEATURE_PARITY.md",
         "docs/OPEN_QUESTIONS.md",

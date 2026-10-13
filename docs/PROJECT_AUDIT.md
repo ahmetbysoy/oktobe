@@ -19,15 +19,20 @@
 - Branch durumu bu tur öncesi: yalnızca `main` (`origin/main` ile senkron). Bu tur `docs/000-kickoff-kurulum-turu` branch'inde çalışıldı; ana dala doğrudan yazılmadı.
 - GitHub Actions, Issue, PR: **NOT_RUN / doğrulanamadı** — ortamda `gh` CLI yok, token yok. Var oldukları iddia edilmiyor (`EV-0002`).
 
-## 2. Kritik bulgu: referans uygulama dosyası yok
+## 2. Kritik bulgu: referans uygulama dosyası (GÜNCELLENDİ — artık mevcut)
 
-Brief'in birincil kaynağı olan `index (30).html` **repoda yok**; git geçmişinde hiç yer almamış; çalışma alanında da bulunamadı (`EV-0007`: repo + geçmiş + `/home/user` taraması boş döndü).
+Kurulum turundaki ilk bulgu: Brief'in birincil kaynağı olan `index (30).html` repoda yoktu (`EV-0007`).
+
+**2026-10-13 güncellemesi (SOKAK bulgusu, KIBIR doğrulaması):** Dosya proje sahibi tarafından ana dala yüklendi (commit `39d098b`) ve iki ajan tarafından bağımsız ölçüldü (`EV-0015`):
+
+- Satır: **6.370** · Boyut: **303.780 bayt**
+- SHA-256: `172083141623593f1d6c958a7f6d64453430dd20b9f1db72c8043e3e23850ea2`
+- Konum: repo kökü, `index (30).html`; içeriğine ajanlarca dokunulmadı (referans salt-okunur).
 
 Sonuçları:
 
-- `docs/PROJECT_AUDIT.md` Bölüm 10 "Aşama 0" (ekran/fonksiyon/state/DOM/olay/ağ/depolama envanteri) **başlatılamaz**; başlatılmış gibi yazılmadı.
-- `docs/FEATURE_PARITY.md`, brief Bölüm 3 ekran envanteri üzerinden kuruldu; referans sütunu tüm maddelerde `BLOCKED — referans yok` durumundadır. Hiçbir özellik "referansla eşleşiyor" diye işaretlenmedi.
-- Bu engel `TASK-003` olarak proje sahibine atandı: dosyanın repoya eklenmesi gerekiyor. Dosya gelmeden ürün kapsamı yalnızca brief metniyle sınırlıdır ve parity iddiası üretilemez.
+- "Aşama 0" envanteri artık başlatılabilir (`TASK-004`, READY; Builder KIBIR).
+- `docs/FEATURE_PARITY.md` referans sütunu `TASK-004` sırasında kaynak fonksiyon/DOM karşılıklarıyla doldurulacaktır; o zamana kadar hiçbir özellik "referansla eşleşiyor" diye işaretlenmez.
 
 ## 3. Hedef ürün (brief özeti)
 
