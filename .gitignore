@@ -1,0 +1,16 @@
+# Bagimliliklar ve uretilen cikti (uygulama iskeleti TASK-007 ile gelince etkinlesir)
+node_modules/
+dist/
+out/
+build/
+
+# Ortam ve sirlar
+.env
+.env.*
+!.env.example
+
+# Isletim sistemi / editor
+.DS_Store
+*.local
+__pycache__/
+*.py[cod]

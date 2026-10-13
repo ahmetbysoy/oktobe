@@ -1,0 +1,484 @@
+{
+  "schema": 1,
+  "updated_at": "2026-10-13T04:03:51Z",
+  "notes": "Durum modeli task.md Bolum 7'ye gore: BACKLOG, READY, IN_PROGRESS, BLOCKED, IMPLEMENTED, REVIEW, VERIFIED, PRODUCTION_READY, CANCELLED. Builder ve Reviewer ayni ajan olamaz. Lease alan gorev baseline'dir; dosyalar baska aktif lease ile kesistirirmez.",
+  "tasks": [
+    {
+      "id": "TASK-001",
+      "title": "Kurulum turu: repo denetimi, yetenek dogrulama, takim bellegi ve baton kurulumu",
+      "description": "task.md Bolum 6 kurulum turu. Urun kodu yazilmaz. Repo gercekten incelenir, yetenekler dogrulanir, takim belgeleri gercek icerikle kurulur, kickoff konusmasi yazilir.",
+      "builder": "KIBIR",
+      "reviewer": "SOKAK",
+      "status": "IMPLEMENTED",
+      "status_reason": "Builder isi tamamladi; Reviewer (SOKAK) henuz dogrulanmadigi icin VERIFIED degildir ve olamaz (task.md 4.4).",
+      "files": [
+        ".agent/**",
+        "docs/**",
+        ".github/**",
+        "scripts/**",
+        "tests/**",
+        "AGENTS.md",
+        "README.md",
+        "CHANGELOG.md",
+        ".env.example",
+        ".gitignore"
+      ],
+      "lease": {
+        "holder": "KIBIR",
+        "claimed_at": "2026-10-13T04:03:51Z",
+        "expires_at": "2026-10-20T04:03:51Z"
+      },
+      "acceptance_criteria": [
+        "docs/PROJECT_AUDIT.md gercek komut ciktilarina dayali mevcut durumu anlatir",
+        "docs/AGENT_CAPABILITIES.md yalnizca dogrulanmis yetenekleri PASS isaretler",
+        "docs/talk/0001-KIBIR-kickoff.md SOKAK'tan 8 maddelik yetenek/inceleme yaniti ister",
+        ".agent/baton.json seq=1, holder=SOKAK, verified_peer degerleri null olarak olusturulur",
+        "scripts/validate-protocol.py calisir ve tests/ altindaki birim testleri gercekten kosulur",
+        "Calistirilamayan kontroller NOT_RUN olarak evidence.jsonl'a islenir"
+      ],
+      "test_commands": [
+        "python3 scripts/validate-protocol.py",
+        "python3 -m unittest discover -s tests -v"
+      ],
+      "evidence_ids": [
+        "EV-0001",
+        "EV-0002",
+        "EV-0003",
+        "EV-0004",
+        "EV-0005",
+        "EV-0006",
+        "EV-0007",
+        "EV-0008",
+        "EV-0009",
+        "EV-0010",
+        "EV-0011",
+        "EV-0012",
+        "EV-0013"
+      ],
+      "risks": [
+        "SOKAK yanit vermezse gorev REVIEW asamasinda kilitli kalir",
+        "Push yetkisi yoksa baton GitHub'da gecerli hale gelmez"
+      ],
+      "issue": null,
+      "pr": "https://github.com/ahmetbysoy/oktobe/pull/1"
+    },
+    {
+      "id": "TASK-002",
+      "title": "SOKAK yetenek raporu ve kickoff kabulü",
+      "description": "SOKAK kendi git kimligiyle (Agent SOKAK <sokak@agent.local>) 0002 numarali konusma dosyasını yazar; gercek araclarini, erisimlerini, test yeteneklerini, GitHub imkanini ve ilk uc riskini bildirir; baton lease'ini kendi commit'iyle claim eder.",
+      "builder": "SOKAK",
+      "reviewer": "KIBIR",
+      "status": "BACKLOG",
+      "status_reason": "KIBIR kickoff'unu bekliyor; SOKAK adina yazi yazilamaz (task.md 4.4).",
+      "files": [
+        "docs/talk/0002-SOKAK-TASK-002-yanit.md",
+        ".agent/baton.json"
+      ],
+      "lease": {
+        "holder": null,
+        "claimed_at": null,
+        "expires_at": null
+      },
+      "acceptance_criteria": [
+        "0002 dosyasinin commit yazari Agent SOKAK ve from=SOKAK eslesir",
+        "KIBIR'in 8 sorusunun tamami teknik ozet bolumunde yanitlanir",
+        "Baton verified_peer.SOKAK, KIBIR tarafindan SOKAK commit hash'iyle doldurulur (devralma turunda)"
+      ],
+      "test_commands": [
+        "python3 scripts/validate-protocol.py"
+      ],
+      "evidence_ids": [],
+      "risks": [
+        "Proje sahibi ikinci ajani ayri oturumda baslatmazsa bu gorev hic baslayamaz"
+      ],
+      "issue": null,
+      "pr": null
+    },
+    {
+      "id": "TASK-003",
+      "title": "Referans dosya temini ve guvenli alimi: index (30).html",
+      "description": "Proje sahibi referans HTML dosyasini repoya ekler veya ajan erisebilecegi bir konuma birakir. Alan ajan dosyayi tasimaz/kopyalamis gibi yapmaz; boyut ve SHA-256 ozeti kaydeder, dosya envantere girer.",
+      "builder": "SOKAK",
+      "reviewer": "KIBIR",
+      "status": "BLOCKED",
+      "status_reason": "Dosya repoda yok (EV-0007). Engel sahibi: proje sahibi. Denenen adim: repo, git gecmisi ve calisma alani tarandi, bulunamadi.",
+      "files": [
+        "index (30).html"
+      ],
+      "lease": {
+        "holder": null,
+        "claimed_at": null,
+        "expires_at": null
+      },
+      "acceptance_criteria": [
+        "Dosya repoda gercekten mevcut ve git ile izleniyor",
+        "Boyut ve SHA-256 docs/PROJECT_AUDIT.md ekine islenmis",
+        "Dosya icerigi bu gorevde degistirilmemis (referans salt-okunur kabul edilir)"
+      ],
+      "test_commands": [
+        "sha256sum \"index (30).html\"",
+        "wc -l \"index (30).html\""
+      ],
+      "evidence_ids": [
+        "EV-0007"
+      ],
+      "risks": [
+        "Dosya hic saglanmazsa FEATURE_PARITY ve Aşama 0 auditi tamamlanamaz; brief kapsamı ekran envanteriyle sinirli kalir"
+      ],
+      "issue": null,
+      "pr": null
+    },
+    {
+      "id": "TASK-004",
+      "title": "Aşama 0: referans uygulama envanteri (ekran/fonksiyon/state/DOM/olay/ag/depolama/zamanlayici)",
+      "description": "PROJECT_BRIEF Bolum 10 Aşama 0. Referans dosyanin tumu incelenir; ozellik -> kaynak fonksiyon/DOM -> yeni modul -> test eslestirme tablosu ve belirsizlikler OPEN_QUESTIONS'a yazilir.",
+      "builder": "KIBIR",
+      "reviewer": "SOKAK",
+      "status": "BACKLOG",
+      "status_reason": "TASK-003'e bagimli.",
+      "files": [
+        "docs/FEATURE_PARITY.md",
+        "docs/OPEN_QUESTIONS.md",
+        "docs/PROJECT_AUDIT.md"
+      ],
+      "lease": {
+        "holder": null,
+        "claimed_at": null,
+        "expires_at": null
+      },
+      "acceptance_criteria": [
+        "Brief Bolum 3'teki her ekran maddesi icin kaynak karsiligi veya 'referansta yok' notu var",
+        "Tum fetch/WebSocket cagrilari ve depolama anahtarları listelenmis",
+        "Belirsiz davranislar uydurulmayip OPEN_QUESTIONS'a yazilmis"
+      ],
+      "test_commands": [
+        "python3 scripts/validate-protocol.py"
+      ],
+      "evidence_ids": [],
+      "risks": [
+        "6.300 satirlik dosyanin yuzeysel okunmasi eksik envantere yol acar"
+      ],
+      "issue": null,
+      "pr": null
+    },
+    {
+      "id": "TASK-005",
+      "title": "Binance resmi endpoint/stream sozlesmesi dogrulamasi ve yonlendirme tablosu",
+      "description": "REST kok, /public ve /market WS yonlendirmesi, stream bazinda dogru uc, depth senkron kurallari resmi dokumantasyondan dogrulanir. Kurulum turunda dokuman duzeyinde on dogrulama yapildi (EV-0006); bu gorev kod sozlesmesine donusturur.",
+      "builder": "SOKAK",
+      "reviewer": "KIBIR",
+      "status": "BACKLOG",
+      "status_reason": "On bulgular PROJECT_AUDIT Bolum 5'te; nihai tablo mimari kararla (TASK-006) birlikte kilitlenir.",
+      "files": [
+        "docs/ARCHITECTURE.md",
+        "docs/DECISIONS.md"
+      ],
+      "lease": {
+        "holder": null,
+        "claimed_at": null,
+        "expires_at": null
+      },
+      "acceptance_criteria": [
+        "Kullanilacak her stream icin resmi URL ve uc (/public veya /market) tabloda kaynak URL ile verilir",
+        "Eski (legacy) wss://fstream.binance.com/ws biciminin 2026-04-23 sonrasi gecersiz oldugu karara baglanir",
+        "Depth snapshot + incremental sync adimlari resmi 'How to manage a local order book' akisiyla eslesir"
+      ],
+      "test_commands": [],
+      "evidence_ids": [
+        "EV-0003",
+        "EV-0004",
+        "EV-0005",
+        "EV-0006"
+      ],
+      "risks": [
+        "Sandbox REST 451; canli REST dogrulamasi hedef agdan yeniden yapilmali"
+      ],
+      "issue": null,
+      "pr": null
+    },
+    {
+      "id": "TASK-006",
+      "title": "Karsilastirmali mimari karar (iki ajan bagimsiz degerlendirme + DECISIONS)",
+      "description": "task.md 6.4: iki ajan ayri ayri mimari degerlendirme yazar; karsilastirmali karar docs/DECISIONS.md'ye islenir. Yigin adayi: TypeScript + Vite + Vanilla TS (brief Bolum 6 onerisi); nihai degildir.",
+      "builder": "SOKAK",
+      "reviewer": "KIBIR",
+      "status": "BACKLOG",
+      "status_reason": "TASK-002'ye (karsı ajan dogrulamasi) bagimli. Tek tarafli mimari karar alinmaz.",
+      "files": [
+        "docs/ARCHITECTURE.md",
+        "docs/DECISIONS.md"
+      ],
+      "lease": {
+        "holder": null,
+        "claimed_at": null,
+        "expires_at": null
+      },
+      "acceptance_criteria": [
+        "Iki ajanin bagimsiz degerlendirmesi talk dosyalarinda mevcut",
+        "Secim olculebilir ihtiyaca dayaniyor; yeniden degerlendirme kosulu yazili",
+        "Lightweight Charts surumu ve lisansi dogrulanip sabitlenme karari verilmis"
+      ],
+      "test_commands": [],
+      "evidence_ids": [],
+      "risks": [
+        "Karsı ajan gelmezse mimari UNVERIFIED kalir ve scaffold baslamaz"
+      ],
+      "issue": null,
+      "pr": null
+    },
+    {
+      "id": "TASK-007",
+      "title": "Iskele: TypeScript + Vite + test/lint/typecheck + CI (karar sonrasi)",
+      "description": "TASK-006 kararinda secilen yiginla proje iskeleti, strict typecheck, Vitest, ESLint ve GitHub Actions isleri kurulur. Bos ekran iskeleti degil, calistirilabilir boru hatti hedeflenir.",
+      "builder": "KIBIR",
+      "reviewer": "SOKAK",
+      "status": "BACKLOG",
+      "status_reason": "TASK-006'ya bagimli.",
+      "files": [
+        "package.json",
+        "tsconfig.json",
+        "vite.config.*",
+        "src/**",
+        "tests/**",
+        ".github/workflows/ci.yml"
+      ],
+      "lease": {
+        "holder": null,
+        "claimed_at": null,
+        "expires_at": null
+      },
+      "acceptance_criteria": [
+        "npm run build, lint, typecheck ve test komutlari yerelde gercekten calisiyor",
+        "CI workflow ayni komutlari kosuyor ve sonucu GitHub'da gorulebiliyor",
+        "Bagimlilik surumleri sabitlenmis (lockfile repoda)"
+      ],
+      "test_commands": [
+        "npm ci",
+        "npm run lint",
+        "npm run typecheck",
+        "npm test",
+        "npm run build"
+      ],
+      "evidence_ids": [],
+      "risks": [
+        ".github/workflows/ci.yml dosya cakismasi: TASK-001 lease'i serbest birakilmadan bu gorev workflows dosyasina dokunamaz"
+      ],
+      "issue": null,
+      "pr": null
+    },
+    {
+      "id": "TASK-008",
+      "title": "Dikey dilim 1: REST sembol/mum verisi ve grafik",
+      "description": "Brief Aşama 2 sira 1. exchangeInfo/ticker/kline REST istemcisi, sema dogrulama, hata siniflandirma (451/429/5xx) ve mum grafigi.",
+      "builder": "SOKAK",
+      "reviewer": "KIBIR",
+      "status": "BACKLOG",
+      "status_reason": "TASK-007'ye bagimli.",
+      "files": [
+        "src/data/binance/rest-client.ts",
+        "src/data/binance/kline-service.ts",
+        "src/data/binance/symbol-service.ts",
+        "src/features/chart/**"
+      ],
+      "lease": {
+        "holder": null,
+        "claimed_at": null,
+        "expires_at": null
+      },
+      "acceptance_criteria": [
+        "Gercek REST yaniti semayla dogrulaniyor; 451 durumu UI'da acikca gosteriliyor",
+        "Sembol/zaman degisimi tutarli ve yarissiz guncelleniyor"
+      ],
+      "test_commands": [
+        "npm test"
+      ],
+      "evidence_ids": [],
+      "risks": [
+        "Hedef agda REST 451 surerse canli dogrulama BLOCKED kalir; mock veri kullanilmaz"
+      ],
+      "issue": null,
+      "pr": null
+    },
+    {
+      "id": "TASK-009",
+      "title": "Dikey dilim 2: Market WebSocket, baglanti sagligi ve yeniden baglanma",
+      "description": "Brief Aşama 2 sira 2. Exponential backoff + jitter, yeniden abonelik, veri yasi gostergesi.",
+      "builder": "KIBIR",
+      "reviewer": "SOKAK",
+      "status": "BACKLOG",
+      "status_reason": "TASK-008'e bagimli.",
+      "files": [
+        "src/data/binance/market-ws.ts",
+        "src/data/binance/reconnect-policy.ts",
+        "src/core/**"
+      ],
+      "lease": {
+        "holder": null,
+        "claimed_at": null,
+        "expires_at": null
+      },
+      "acceptance_criteria": [
+        "Kopmada gosterge yesil kalmiyor; backoff testli",
+        "Abonelikler yeniden kurulumda idempotent"
+      ],
+      "test_commands": [
+        "npm test"
+      ],
+      "evidence_ids": [],
+      "risks": [],
+      "issue": null,
+      "pr": null
+    },
+    {
+      "id": "TASK-010",
+      "title": "Dikey dilim 3: aggTrade/CVD/OBI/markPrice/funding/OI/likidasyon akislari",
+      "description": "Brief Aşama 2 sira 3. Normalize, deduplication, pencere metrikleri.",
+      "builder": "SOKAK",
+      "reviewer": "KIBIR",
+      "status": "BACKLOG",
+      "status_reason": "TASK-009'a bagimli.",
+      "files": [
+        "src/data/normalize/**",
+        "src/domain/analytics/cvd.ts",
+        "src/domain/analytics/obi.ts"
+      ],
+      "lease": {
+        "holder": null,
+        "claimed_at": null,
+        "expires_at": null
+      },
+      "acceptance_criteria": [
+        "Ayni trade iki kez islenmiyor; pencere test vektörleri geciyor"
+      ],
+      "test_commands": [
+        "npm test"
+      ],
+      "evidence_ids": [],
+      "risks": [],
+      "issue": null,
+      "pr": null
+    },
+    {
+      "id": "TASK-011",
+      "title": "Dikey dilim 4: depth snapshot + incremental senkronizasyon",
+      "description": "Brief Aşama 2 sira 4 ve resmi local order book akisi (U/u/pu zinciri, gap'te yeniden snapshot).",
+      "builder": "KIBIR",
+      "reviewer": "SOKAK",
+      "status": "BACKLOG",
+      "status_reason": "TASK-010'a bagimli.",
+      "files": [
+        "src/data/normalize/sequence-sync.ts",
+        "src/domain/market/orderbook.ts"
+      ],
+      "lease": {
+        "holder": null,
+        "claimed_at": null,
+        "expires_at": null
+      },
+      "acceptance_criteria": [
+        "Gap senaryosu kitabi gecersiz sayip yeniden kuruyor; test kanitli"
+      ],
+      "test_commands": [
+        "npm test"
+      ],
+      "evidence_ids": [],
+      "risks": [
+        "REST snapshot 451'e takilirsa senkron canli ortamda dogrulanamaz"
+      ],
+      "issue": null,
+      "pr": null
+    },
+    {
+      "id": "TASK-012",
+      "title": "Dikey dilimler 5-7: DOM/duvar/isi haritasi, teknik analiz ve karar motoru, sinyal ekrani ve uyarilar",
+      "description": "Brief Aşama 2 sira 5, 6, 7. Uygulama oncesi TASK-006 sonrasinda Builder tarafindan uc ayri goreve bolunecektir; bu kayit plan gorunurlugu icindir, tek seferde alinamaz.",
+      "builder": "SOKAK",
+      "reviewer": "KIBIR",
+      "status": "BACKLOG",
+      "status_reason": "Bolunme bekliyor; lease alinmadan baslanmaz.",
+      "files": [
+        "src/domain/analytics/**",
+        "src/features/signal/**"
+      ],
+      "lease": {
+        "holder": null,
+        "claimed_at": null,
+        "expires_at": null
+      },
+      "acceptance_criteria": [
+        "Bolunmus her alt gorevin kendi kabul kriteri ve test komutu tanimlanir"
+      ],
+      "test_commands": [
+        "npm test"
+      ],
+      "evidence_ids": [],
+      "risks": [
+        "Kapsam buyuklugu: tek gorev olarak alinirsa inceleme yuzeysellesir"
+      ],
+      "issue": null,
+      "pr": null
+    },
+    {
+      "id": "TASK-013",
+      "title": "Dikey dilimler 8-12: favoriler/ayarlar, Pattern Pool, tarayici, walk-forward backtest, oturum kaydedici",
+      "description": "Brief Aşama 2 sira 8-12. Her biri ayri goreve bolunerek alinacaktir; IndexedDB migration ve bozuk import davranisi test kapsamindadir.",
+      "builder": "KIBIR",
+      "reviewer": "SOKAK",
+      "status": "BACKLOG",
+      "status_reason": "Bolunme bekliyor.",
+      "files": [
+        "src/storage/**",
+        "src/features/pattern-pool/**",
+        "src/features/scanner/**",
+        "src/features/backtest/**",
+        "src/features/session-recorder/**"
+      ],
+      "lease": {
+        "holder": null,
+        "claimed_at": null,
+        "expires_at": null
+      },
+      "acceptance_criteria": [
+        "Bolunmus her alt gorevin kendi kabul kriteri ve test komutu tanimlanir"
+      ],
+      "test_commands": [
+        "npm test"
+      ],
+      "evidence_ids": [],
+      "risks": [],
+      "issue": null,
+      "pr": null
+    },
+    {
+      "id": "TASK-014",
+      "title": "Aşama 3: birebirlik (parity) denetimi ve yayin hazirligi",
+      "description": "FEATURE_PARITY madde madde karsilastirma, mobil/masaustu kontrol, RELEASE_PLAN kriterleriyle PRODUCTION_READY degerlendirmesi.",
+      "builder": "SOKAK",
+      "reviewer": "KIBIR",
+      "status": "BACKLOG",
+      "status_reason": "Onceki dilimlere bagimli.",
+      "files": [
+        "docs/FEATURE_PARITY.md",
+        "docs/STATUS.md",
+        "docs/RELEASE_PLAN.md"
+      ],
+      "lease": {
+        "holder": null,
+        "claimed_at": null,
+        "expires_at": null
+      },
+      "acceptance_criteria": [
+        "Her parity maddesi icin test veya dogrulama kaniti var",
+        "Calismayan ozellik gizlenmeyip raporlanmis"
+      ],
+      "test_commands": [
+        "npm test",
+        "npm run build"
+      ],
+      "evidence_ids": [],
+      "risks": [],
+      "issue": null,
+      "pr": null
+    }
+  ]
+}

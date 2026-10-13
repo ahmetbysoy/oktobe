@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "project": "oktobe - Futures Scanner / Order-Flow Terminal",
+  "phase": "interpret",
+  "overall_status": "SETUP_IMPLEMENTED_PEER_REVIEW_PENDING",
+  "baton": {
+    "seq": 1,
+    "holder": "SOKAK",
+    "holder_semantics": "6.3 davet durumu; SOKAK henuz claim etmedi, verified_peer.SOKAK null",
+    "peer_verified": false
+  },
+  "reference_file": {
+    "expected": "index (30).html",
+    "status": "MISSING",
+    "detail": "Repoda ve calisma alaninda yok; git gecmisinde de hic yer almamis. Parity auditi bloklu."
+  },
+  "connectivity_sandbox_2026-10-13": {
+    "binance_rest_fapi": "FAIL HTTP 451 (restricted location mesaji; asma girisimi yapilmadi)",
+    "binance_ws_market": "PASS (btcusdt@miniTicker mesaji alindi)",
+    "binance_ws_public": "PASS (btcusdt@depth@100ms depthUpdate alindi; U/u/pu alanlari mevcut)"
+  },
+  "product_code_status": "NOT_STARTED (task.md Bolum 6: ilk gorev kod yazmak degildir; karsı ajan mimari degerlendirmesi olmadan urun koduna baslanmaz)",
+  "ci_status": "GITHUB_ACTIONS_CALISIYOR: push kosulari success; PR #1 pull_request kosusu ilk denemede FAIL (AT-0005), duzeltme (785160b) sonrasi SUCCESS (run 38348082182)",
+  "github_status": "PUSH_TAMAMLANDI ve PR #1 ACILDI (https://github.com/ahmetbysoy/oktobe/pull/1). Erisim yalnizca bellekte gecici kullanildi; token degeri repoya/loga yazilmadi (grep ile dogrulanacak).",
+  "last_talk_file": "docs/talk/0001-KIBIR-kickoff.md",
+  "updated_at": "2026-10-13T04:03:51Z"
+}

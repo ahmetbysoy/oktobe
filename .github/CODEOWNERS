@@ -1,0 +1,4 @@
+# CODEOWNERS - varsayilan sahip proje sahibidir (repo: ahmetbysoy/oktobe).
+# Ajanlar (KIBIR/SOKAK) GitHub kullanicisi degildir; PR onaylari gorev kaydindaki
+# Reviewer ajan + proje sahibi mekanizmasiyla yurutulur (AGENTS.md).
+* @ahmetbysoy

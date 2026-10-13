@@ -1,0 +1,37 @@
+name: Görev
+description: Tanımlı, kabul kriterli bir iş paketi aç
+title: "[TASK] "
+labels: ["task"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Görev kaydının kanonik yeri `.agent/tasks.json` dosyasıdır; bu Issue, görev görünürlüğü içindir. İkisi çelişirse tasks.json güncellenir.
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Amaç ve kapsam
+      description: Ne yapılacak, neden? Kapsam dışı olanı da yaz.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Kabul kriterleri
+      description: Maddeler hâlinde, doğrulanabilir yaz.
+    validations:
+      required: true
+  - type: textarea
+    id: plan
+    attributes:
+      label: Test planı ve bağımlılıklar
+      description: Çalıştırılacak komutlar, beklenen kanıtlar, ön koşullar.
+    validations:
+      required: true
+  - type: input
+    id: owners
+    attributes:
+      label: Builder / Reviewer
+      placeholder: "Builder: SOKAK · Reviewer: KIBIR"
+    validations:
+      required: true
