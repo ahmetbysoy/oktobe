@@ -26,7 +26,7 @@ Toplam 14 görev: `IMPLEMENTED` 1 (TASK-001, inceleme bekliyor) · `BLOCKED` 1 (
 ## Başarısız / çalıştırılamayanlar (gizlenmiyor)
 
 - Referans dosya bulunamadı → Aşama 0 parity auditi başlamadı (EV-0007, TASK-003 BLOCKED).
-- GitHub Issue/PR/Actions: `gh` yok (EV-0002). İlk push denemesi kimlik bilgisiz başarısız oldu (EV-0010); proje sahibinin Google Drive `agentpink/erisim.json` üzerinden sağladığı erişim, token değeri hiçbir dosyaya/loga yazılmadan yalnızca bellekte geçici kullanılarak push tamamlandı: branch `docs/000-kickoff-kurulum-turu` GitHub'a yüklendi ve uzaktan doğrulandı (EV-0011). Baton artık GitHub'daki bu branch üzerinde geçerlidir; ana dal (`main`) henüz değişmemiştir, birleşme PR incelemesine tabidir.
+- GitHub Issue/PR/Actions: `gh` yok (EV-0002). İlk push denemesi kimlik bilgisiz başarısız oldu (EV-0010); proje sahibinin Google Drive `agentpink/erisim.json` üzerinden sağladığı erişim, token değeri hiçbir dosyaya/loga yazılmadan yalnızca bellekte geçici kullanılarak push tamamlandı: branch `docs/000-kickoff-kurulum-turu` GitHub'a yüklendi ve uzaktan doğrulandı (EV-0011). Baton artık GitHub'daki bu branch üzerinde geçerlidir; ana dal (`main`) henüz değişmemiştir. PR #1 açıldı (https://github.com/ahmetbysoy/oktobe/pull/1); GitHub Actions push koşuları success, PR koşusu ilk denemede merge-commit yanlış pozitifiyle FAIL olup düzeltme (785160b, AT-0005) sonrası SUCCESS oldu (EV-0012). Birleşme, inceleme onayına tabidir (yazar kendi PR'ını onaylamaz).
 - Tarayıcı/cihaz testi: NOT_RUN (ortam yok).
 
 ## Sonraki üç iş (öncelik sırasıyla)

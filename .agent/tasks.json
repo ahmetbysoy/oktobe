@@ -11,8 +11,23 @@
       "reviewer": "SOKAK",
       "status": "IMPLEMENTED",
       "status_reason": "Builder isi tamamladi; Reviewer (SOKAK) henuz dogrulanmadigi icin VERIFIED degildir ve olamaz (task.md 4.4).",
-      "files": [".agent/**", "docs/**", ".github/**", "scripts/**", "tests/**", "AGENTS.md", "README.md", "CHANGELOG.md", ".env.example", ".gitignore"],
-      "lease": { "holder": "KIBIR", "claimed_at": "2026-10-13T04:03:51Z", "expires_at": "2026-10-20T04:03:51Z" },
+      "files": [
+        ".agent/**",
+        "docs/**",
+        ".github/**",
+        "scripts/**",
+        "tests/**",
+        "AGENTS.md",
+        "README.md",
+        "CHANGELOG.md",
+        ".env.example",
+        ".gitignore"
+      ],
+      "lease": {
+        "holder": "KIBIR",
+        "claimed_at": "2026-10-13T04:03:51Z",
+        "expires_at": "2026-10-20T04:03:51Z"
+      },
       "acceptance_criteria": [
         "docs/PROJECT_AUDIT.md gercek komut ciktilarina dayali mevcut durumu anlatir",
         "docs/AGENT_CAPABILITIES.md yalnizca dogrulanmis yetenekleri PASS isaretler",
@@ -21,11 +36,30 @@
         "scripts/validate-protocol.py calisir ve tests/ altindaki birim testleri gercekten kosulur",
         "Calistirilamayan kontroller NOT_RUN olarak evidence.jsonl'a islenir"
       ],
-      "test_commands": ["python3 scripts/validate-protocol.py", "python3 -m unittest discover -s tests -v"],
-      "evidence_ids": ["EV-0001", "EV-0002", "EV-0003", "EV-0004", "EV-0005", "EV-0006", "EV-0007", "EV-0008", "EV-0009", "EV-0010", "EV-0011"],
-      "risks": ["SOKAK yanit vermezse gorev REVIEW asamasinda kilitli kalir", "Push yetkisi yoksa baton GitHub'da gecerli hale gelmez"],
+      "test_commands": [
+        "python3 scripts/validate-protocol.py",
+        "python3 -m unittest discover -s tests -v"
+      ],
+      "evidence_ids": [
+        "EV-0001",
+        "EV-0002",
+        "EV-0003",
+        "EV-0004",
+        "EV-0005",
+        "EV-0006",
+        "EV-0007",
+        "EV-0008",
+        "EV-0009",
+        "EV-0010",
+        "EV-0011",
+        "EV-0012"
+      ],
+      "risks": [
+        "SOKAK yanit vermezse gorev REVIEW asamasinda kilitli kalir",
+        "Push yetkisi yoksa baton GitHub'da gecerli hale gelmez"
+      ],
       "issue": null,
-      "pr": null
+      "pr": "https://github.com/ahmetbysoy/oktobe/pull/1"
     },
     {
       "id": "TASK-002",
@@ -35,16 +69,27 @@
       "reviewer": "KIBIR",
       "status": "BACKLOG",
       "status_reason": "KIBIR kickoff'unu bekliyor; SOKAK adina yazi yazilamaz (task.md 4.4).",
-      "files": ["docs/talk/0002-SOKAK-TASK-002-yanit.md", ".agent/baton.json"],
-      "lease": { "holder": null, "claimed_at": null, "expires_at": null },
+      "files": [
+        "docs/talk/0002-SOKAK-TASK-002-yanit.md",
+        ".agent/baton.json"
+      ],
+      "lease": {
+        "holder": null,
+        "claimed_at": null,
+        "expires_at": null
+      },
       "acceptance_criteria": [
         "0002 dosyasinin commit yazari Agent SOKAK ve from=SOKAK eslesir",
         "KIBIR'in 8 sorusunun tamami teknik ozet bolumunde yanitlanir",
         "Baton verified_peer.SOKAK, KIBIR tarafindan SOKAK commit hash'iyle doldurulur (devralma turunda)"
       ],
-      "test_commands": ["python3 scripts/validate-protocol.py"],
+      "test_commands": [
+        "python3 scripts/validate-protocol.py"
+      ],
       "evidence_ids": [],
-      "risks": ["Proje sahibi ikinci ajani ayri oturumda baslatmazsa bu gorev hic baslayamaz"],
+      "risks": [
+        "Proje sahibi ikinci ajani ayri oturumda baslatmazsa bu gorev hic baslayamaz"
+      ],
       "issue": null,
       "pr": null
     },
@@ -56,16 +101,29 @@
       "reviewer": "KIBIR",
       "status": "BLOCKED",
       "status_reason": "Dosya repoda yok (EV-0007). Engel sahibi: proje sahibi. Denenen adim: repo, git gecmisi ve calisma alani tarandi, bulunamadi.",
-      "files": ["index (30).html"],
-      "lease": { "holder": null, "claimed_at": null, "expires_at": null },
+      "files": [
+        "index (30).html"
+      ],
+      "lease": {
+        "holder": null,
+        "claimed_at": null,
+        "expires_at": null
+      },
       "acceptance_criteria": [
         "Dosya repoda gercekten mevcut ve git ile izleniyor",
         "Boyut ve SHA-256 docs/PROJECT_AUDIT.md ekine islenmis",
         "Dosya icerigi bu gorevde degistirilmemis (referans salt-okunur kabul edilir)"
       ],
-      "test_commands": ["sha256sum \"index (30).html\"", "wc -l \"index (30).html\""],
-      "evidence_ids": ["EV-0007"],
-      "risks": ["Dosya hic saglanmazsa FEATURE_PARITY ve Aşama 0 auditi tamamlanamaz; brief kapsamı ekran envanteriyle sinirli kalir"],
+      "test_commands": [
+        "sha256sum \"index (30).html\"",
+        "wc -l \"index (30).html\""
+      ],
+      "evidence_ids": [
+        "EV-0007"
+      ],
+      "risks": [
+        "Dosya hic saglanmazsa FEATURE_PARITY ve Aşama 0 auditi tamamlanamaz; brief kapsamı ekran envanteriyle sinirli kalir"
+      ],
       "issue": null,
       "pr": null
     },
@@ -77,16 +135,28 @@
       "reviewer": "SOKAK",
       "status": "BACKLOG",
       "status_reason": "TASK-003'e bagimli.",
-      "files": ["docs/FEATURE_PARITY.md", "docs/OPEN_QUESTIONS.md", "docs/PROJECT_AUDIT.md"],
-      "lease": { "holder": null, "claimed_at": null, "expires_at": null },
+      "files": [
+        "docs/FEATURE_PARITY.md",
+        "docs/OPEN_QUESTIONS.md",
+        "docs/PROJECT_AUDIT.md"
+      ],
+      "lease": {
+        "holder": null,
+        "claimed_at": null,
+        "expires_at": null
+      },
       "acceptance_criteria": [
         "Brief Bolum 3'teki her ekran maddesi icin kaynak karsiligi veya 'referansta yok' notu var",
         "Tum fetch/WebSocket cagrilari ve depolama anahtarları listelenmis",
         "Belirsiz davranislar uydurulmayip OPEN_QUESTIONS'a yazilmis"
       ],
-      "test_commands": ["python3 scripts/validate-protocol.py"],
+      "test_commands": [
+        "python3 scripts/validate-protocol.py"
+      ],
       "evidence_ids": [],
-      "risks": ["6.300 satirlik dosyanin yuzeysel okunmasi eksik envantere yol acar"],
+      "risks": [
+        "6.300 satirlik dosyanin yuzeysel okunmasi eksik envantere yol acar"
+      ],
       "issue": null,
       "pr": null
     },
@@ -98,16 +168,30 @@
       "reviewer": "KIBIR",
       "status": "BACKLOG",
       "status_reason": "On bulgular PROJECT_AUDIT Bolum 5'te; nihai tablo mimari kararla (TASK-006) birlikte kilitlenir.",
-      "files": ["docs/ARCHITECTURE.md", "docs/DECISIONS.md"],
-      "lease": { "holder": null, "claimed_at": null, "expires_at": null },
+      "files": [
+        "docs/ARCHITECTURE.md",
+        "docs/DECISIONS.md"
+      ],
+      "lease": {
+        "holder": null,
+        "claimed_at": null,
+        "expires_at": null
+      },
       "acceptance_criteria": [
         "Kullanilacak her stream icin resmi URL ve uc (/public veya /market) tabloda kaynak URL ile verilir",
         "Eski (legacy) wss://fstream.binance.com/ws biciminin 2026-04-23 sonrasi gecersiz oldugu karara baglanir",
         "Depth snapshot + incremental sync adimlari resmi 'How to manage a local order book' akisiyla eslesir"
       ],
       "test_commands": [],
-      "evidence_ids": ["EV-0003", "EV-0004", "EV-0005", "EV-0006"],
-      "risks": ["Sandbox REST 451; canli REST dogrulamasi hedef agdan yeniden yapilmali"],
+      "evidence_ids": [
+        "EV-0003",
+        "EV-0004",
+        "EV-0005",
+        "EV-0006"
+      ],
+      "risks": [
+        "Sandbox REST 451; canli REST dogrulamasi hedef agdan yeniden yapilmali"
+      ],
       "issue": null,
       "pr": null
     },
@@ -119,8 +203,15 @@
       "reviewer": "KIBIR",
       "status": "BACKLOG",
       "status_reason": "TASK-002'ye (karsı ajan dogrulamasi) bagimli. Tek tarafli mimari karar alinmaz.",
-      "files": ["docs/ARCHITECTURE.md", "docs/DECISIONS.md"],
-      "lease": { "holder": null, "claimed_at": null, "expires_at": null },
+      "files": [
+        "docs/ARCHITECTURE.md",
+        "docs/DECISIONS.md"
+      ],
+      "lease": {
+        "holder": null,
+        "claimed_at": null,
+        "expires_at": null
+      },
       "acceptance_criteria": [
         "Iki ajanin bagimsiz degerlendirmesi talk dosyalarinda mevcut",
         "Secim olculebilir ihtiyaca dayaniyor; yeniden degerlendirme kosulu yazili",
@@ -128,7 +219,9 @@
       ],
       "test_commands": [],
       "evidence_ids": [],
-      "risks": ["Karsı ajan gelmezse mimari UNVERIFIED kalir ve scaffold baslamaz"],
+      "risks": [
+        "Karsı ajan gelmezse mimari UNVERIFIED kalir ve scaffold baslamaz"
+      ],
       "issue": null,
       "pr": null
     },
@@ -140,16 +233,35 @@
       "reviewer": "SOKAK",
       "status": "BACKLOG",
       "status_reason": "TASK-006'ya bagimli.",
-      "files": ["package.json", "tsconfig.json", "vite.config.*", "src/**", "tests/**", ".github/workflows/ci.yml"],
-      "lease": { "holder": null, "claimed_at": null, "expires_at": null },
+      "files": [
+        "package.json",
+        "tsconfig.json",
+        "vite.config.*",
+        "src/**",
+        "tests/**",
+        ".github/workflows/ci.yml"
+      ],
+      "lease": {
+        "holder": null,
+        "claimed_at": null,
+        "expires_at": null
+      },
       "acceptance_criteria": [
         "npm run build, lint, typecheck ve test komutlari yerelde gercekten calisiyor",
         "CI workflow ayni komutlari kosuyor ve sonucu GitHub'da gorulebiliyor",
         "Bagimlilik surumleri sabitlenmis (lockfile repoda)"
       ],
-      "test_commands": ["npm ci", "npm run lint", "npm run typecheck", "npm test", "npm run build"],
+      "test_commands": [
+        "npm ci",
+        "npm run lint",
+        "npm run typecheck",
+        "npm test",
+        "npm run build"
+      ],
       "evidence_ids": [],
-      "risks": [".github/workflows/ci.yml dosya cakismasi: TASK-001 lease'i serbest birakilmadan bu gorev workflows dosyasina dokunamaz"],
+      "risks": [
+        ".github/workflows/ci.yml dosya cakismasi: TASK-001 lease'i serbest birakilmadan bu gorev workflows dosyasina dokunamaz"
+      ],
       "issue": null,
       "pr": null
     },
@@ -161,12 +273,28 @@
       "reviewer": "KIBIR",
       "status": "BACKLOG",
       "status_reason": "TASK-007'ye bagimli.",
-      "files": ["src/data/binance/rest-client.ts", "src/data/binance/kline-service.ts", "src/data/binance/symbol-service.ts", "src/features/chart/**"],
-      "lease": { "holder": null, "claimed_at": null, "expires_at": null },
-      "acceptance_criteria": ["Gercek REST yaniti semayla dogrulaniyor; 451 durumu UI'da acikca gosteriliyor", "Sembol/zaman degisimi tutarli ve yarissiz guncelleniyor"],
-      "test_commands": ["npm test"],
+      "files": [
+        "src/data/binance/rest-client.ts",
+        "src/data/binance/kline-service.ts",
+        "src/data/binance/symbol-service.ts",
+        "src/features/chart/**"
+      ],
+      "lease": {
+        "holder": null,
+        "claimed_at": null,
+        "expires_at": null
+      },
+      "acceptance_criteria": [
+        "Gercek REST yaniti semayla dogrulaniyor; 451 durumu UI'da acikca gosteriliyor",
+        "Sembol/zaman degisimi tutarli ve yarissiz guncelleniyor"
+      ],
+      "test_commands": [
+        "npm test"
+      ],
       "evidence_ids": [],
-      "risks": ["Hedef agda REST 451 surerse canli dogrulama BLOCKED kalir; mock veri kullanilmaz"],
+      "risks": [
+        "Hedef agda REST 451 surerse canli dogrulama BLOCKED kalir; mock veri kullanilmaz"
+      ],
       "issue": null,
       "pr": null
     },
@@ -178,10 +306,23 @@
       "reviewer": "SOKAK",
       "status": "BACKLOG",
       "status_reason": "TASK-008'e bagimli.",
-      "files": ["src/data/binance/market-ws.ts", "src/data/binance/reconnect-policy.ts", "src/core/**"],
-      "lease": { "holder": null, "claimed_at": null, "expires_at": null },
-      "acceptance_criteria": ["Kopmada gosterge yesil kalmiyor; backoff testli", "Abonelikler yeniden kurulumda idempotent"],
-      "test_commands": ["npm test"],
+      "files": [
+        "src/data/binance/market-ws.ts",
+        "src/data/binance/reconnect-policy.ts",
+        "src/core/**"
+      ],
+      "lease": {
+        "holder": null,
+        "claimed_at": null,
+        "expires_at": null
+      },
+      "acceptance_criteria": [
+        "Kopmada gosterge yesil kalmiyor; backoff testli",
+        "Abonelikler yeniden kurulumda idempotent"
+      ],
+      "test_commands": [
+        "npm test"
+      ],
       "evidence_ids": [],
       "risks": [],
       "issue": null,
@@ -195,10 +336,22 @@
       "reviewer": "KIBIR",
       "status": "BACKLOG",
       "status_reason": "TASK-009'a bagimli.",
-      "files": ["src/data/normalize/**", "src/domain/analytics/cvd.ts", "src/domain/analytics/obi.ts"],
-      "lease": { "holder": null, "claimed_at": null, "expires_at": null },
-      "acceptance_criteria": ["Ayni trade iki kez islenmiyor; pencere test vektörleri geciyor"],
-      "test_commands": ["npm test"],
+      "files": [
+        "src/data/normalize/**",
+        "src/domain/analytics/cvd.ts",
+        "src/domain/analytics/obi.ts"
+      ],
+      "lease": {
+        "holder": null,
+        "claimed_at": null,
+        "expires_at": null
+      },
+      "acceptance_criteria": [
+        "Ayni trade iki kez islenmiyor; pencere test vektörleri geciyor"
+      ],
+      "test_commands": [
+        "npm test"
+      ],
       "evidence_ids": [],
       "risks": [],
       "issue": null,
@@ -212,12 +365,25 @@
       "reviewer": "SOKAK",
       "status": "BACKLOG",
       "status_reason": "TASK-010'a bagimli.",
-      "files": ["src/data/normalize/sequence-sync.ts", "src/domain/market/orderbook.ts"],
-      "lease": { "holder": null, "claimed_at": null, "expires_at": null },
-      "acceptance_criteria": ["Gap senaryosu kitabi gecersiz sayip yeniden kuruyor; test kanitli"],
-      "test_commands": ["npm test"],
+      "files": [
+        "src/data/normalize/sequence-sync.ts",
+        "src/domain/market/orderbook.ts"
+      ],
+      "lease": {
+        "holder": null,
+        "claimed_at": null,
+        "expires_at": null
+      },
+      "acceptance_criteria": [
+        "Gap senaryosu kitabi gecersiz sayip yeniden kuruyor; test kanitli"
+      ],
+      "test_commands": [
+        "npm test"
+      ],
       "evidence_ids": [],
-      "risks": ["REST snapshot 451'e takilirsa senkron canli ortamda dogrulanamaz"],
+      "risks": [
+        "REST snapshot 451'e takilirsa senkron canli ortamda dogrulanamaz"
+      ],
       "issue": null,
       "pr": null
     },
@@ -229,12 +395,25 @@
       "reviewer": "KIBIR",
       "status": "BACKLOG",
       "status_reason": "Bolunme bekliyor; lease alinmadan baslanmaz.",
-      "files": ["src/domain/analytics/**", "src/features/signal/**"],
-      "lease": { "holder": null, "claimed_at": null, "expires_at": null },
-      "acceptance_criteria": ["Bolunmus her alt gorevin kendi kabul kriteri ve test komutu tanimlanir"],
-      "test_commands": ["npm test"],
+      "files": [
+        "src/domain/analytics/**",
+        "src/features/signal/**"
+      ],
+      "lease": {
+        "holder": null,
+        "claimed_at": null,
+        "expires_at": null
+      },
+      "acceptance_criteria": [
+        "Bolunmus her alt gorevin kendi kabul kriteri ve test komutu tanimlanir"
+      ],
+      "test_commands": [
+        "npm test"
+      ],
       "evidence_ids": [],
-      "risks": ["Kapsam buyuklugu: tek gorev olarak alinirsa inceleme yuzeysellesir"],
+      "risks": [
+        "Kapsam buyuklugu: tek gorev olarak alinirsa inceleme yuzeysellesir"
+      ],
       "issue": null,
       "pr": null
     },
@@ -246,10 +425,24 @@
       "reviewer": "SOKAK",
       "status": "BACKLOG",
       "status_reason": "Bolunme bekliyor.",
-      "files": ["src/storage/**", "src/features/pattern-pool/**", "src/features/scanner/**", "src/features/backtest/**", "src/features/session-recorder/**"],
-      "lease": { "holder": null, "claimed_at": null, "expires_at": null },
-      "acceptance_criteria": ["Bolunmus her alt gorevin kendi kabul kriteri ve test komutu tanimlanir"],
-      "test_commands": ["npm test"],
+      "files": [
+        "src/storage/**",
+        "src/features/pattern-pool/**",
+        "src/features/scanner/**",
+        "src/features/backtest/**",
+        "src/features/session-recorder/**"
+      ],
+      "lease": {
+        "holder": null,
+        "claimed_at": null,
+        "expires_at": null
+      },
+      "acceptance_criteria": [
+        "Bolunmus her alt gorevin kendi kabul kriteri ve test komutu tanimlanir"
+      ],
+      "test_commands": [
+        "npm test"
+      ],
       "evidence_ids": [],
       "risks": [],
       "issue": null,
@@ -263,10 +456,24 @@
       "reviewer": "KIBIR",
       "status": "BACKLOG",
       "status_reason": "Onceki dilimlere bagimli.",
-      "files": ["docs/FEATURE_PARITY.md", "docs/STATUS.md", "docs/RELEASE_PLAN.md"],
-      "lease": { "holder": null, "claimed_at": null, "expires_at": null },
-      "acceptance_criteria": ["Her parity maddesi icin test veya dogrulama kaniti var", "Calismayan ozellik gizlenmeyip raporlanmis"],
-      "test_commands": ["npm test", "npm run build"],
+      "files": [
+        "docs/FEATURE_PARITY.md",
+        "docs/STATUS.md",
+        "docs/RELEASE_PLAN.md"
+      ],
+      "lease": {
+        "holder": null,
+        "claimed_at": null,
+        "expires_at": null
+      },
+      "acceptance_criteria": [
+        "Her parity maddesi icin test veya dogrulama kaniti var",
+        "Calismayan ozellik gizlenmeyip raporlanmis"
+      ],
+      "test_commands": [
+        "npm test",
+        "npm run build"
+      ],
       "evidence_ids": [],
       "risks": [],
       "issue": null,
