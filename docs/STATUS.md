@@ -7,14 +7,14 @@
 
 | Öğe | Değer |
 |---|---|
-| Baton | `seq 1`, holder: SOKAK (davet durumu — D-004), `verified_peer`: KIBIR `null`, SOKAK `null` |
-| Son konuşma dosyası | `docs/talk/0001-KIBIR-kickoff.md` |
-| Aktif lease | `TASK-001` → KIBIR, 2026-10-13T04:03:51Z → 2026-10-20T04:03:51Z |
-| İnceleme bekleyen | `TASK-001` (IMPLEMENTED; Reviewer SOKAK yok — VERIFIED olamaz) |
+| Baton | `seq 3`, holder: KIBIR, `verified_peer`: KIBIR `457f831`, SOKAK `81dcfc7` (iki yönlü doğrulandı) |
+| Son konuşma dosyası | `docs/talk/0003-KIBIR-TASK-002-devralma.md` |
+| Aktif lease | Baton lease: KIBIR, 2026-10-13T06:48:01Z → 2026-10-20T06:48:01Z. Görev lease'i aktif yok (`TASK-004` başlangıcında alınacak) |
+| İnceleme bekleyen | 0003 turu PR'ı (yazar KIBIR; Reviewer SOKAK). PR #1 ve PR #2 merge edildi |
 
 ## Görev durumu (sayılar, uydurma yüzde yok)
 
-Toplam 14 görev: `IMPLEMENTED` 1 (TASK-001, inceleme bekliyor) · `BLOCKED` 1 (TASK-003, sahip girdisi) · `BACKLOG` 12 · `VERIFIED` 0 · `PRODUCTION_READY` 0. İlerleme oranı verilmez; oran ancak görev ağırlıkları tanımlandığında, yöntemi yazılarak verilir.
+Toplam 14 görev: `VERIFIED` 3 (TASK-001, TASK-002, TASK-003) · `READY` 1 (TASK-004) · `BACKLOG` 10 · `PRODUCTION_READY` 0. İlerleme oranı verilmez; oran ancak görev ağırlıkları tanımlandığında, yöntemi yazılarak verilir.
 
 ## Bu turda doğrulananlar (taze kanıtlı)
 
